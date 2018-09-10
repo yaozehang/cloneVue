@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model="username">
+    <br>
+    <input type="text" v-model="password">
+    <button @click="toggleAlert">
+      点击显示
+    </button>
+  </div>
+</body>
+<script src="./vue.js"></script>
+<script>
+  const app = new Vue({
+    el:"#app",
+    data:{
+      username:'',
+      password:''
+    },
+    methods:{
+      toggleAlert(){
+        alert(this.username)
+        alert(this.password)
+      }
+    }
+  })
+</script>
+</html>

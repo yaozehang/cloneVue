@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div>
+        <h1>ToDoList</h1>
+        <input type="text" v-model="todo" placeholder="添加ToDo" @keyup.enter="handleAdd">
+    </div>
+      <h2>正在进行</h2>
+      <ul class="no-done">
+        <li v-for="(item,index) in arr" v-show="!item.isDone">
+          <input type="checkbox" v-model="item.isDone" >
+          <strong>{{item.todo}}</strong>
+          <button @click="delete(index)">删除</button>
+        </li>
+      </ul>
+      <h2>已经完成</h2>
+      <ul>
+        <li v-for="item in arr" v-show="item.isDone">
+          <input type="checkbox" v-model="item.isDone">
+          <del>{{item.todo}}</del>
+        </li>
+      </ul>
+  </div>
+</body>
+<script src="./vue.js"></script>
+<script>
+  const app = new Vue({
+    el:"#app",
+    data:{
+      arr:[
+        {
+          todo:"学代码",
+          isDone:true,
+        },
+        {
+          todo:"吃饭",
+          isDone:false
+        }
+      ],
+      todo:'',
+    },
+    methods:{
+      handleAdd(){
+        this.arr.push({
+          todo:this.todo,
+          isDone:false
+        })
+       this.todo = "" 
+      },
+      delete(index){
+        this.arr.splice(index,1)
+     }
+    }
+  })
+</script>
+</html>

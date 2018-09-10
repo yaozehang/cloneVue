@@ -1,0 +1,31 @@
+.box{
+  width: 100px;
+  height: 100px;
+  background-color: #f00;
+}
+
+.done{
+  text-decoration:line-through;
+}
+
+.my-btn{
+  width: 100px;
+  height: 50px;
+  border-radius: 4px;
+  color:#fff;
+  background-color: #409eff; 
+  line-height: 50px;
+  align-content: center;
+  border:none;
+  outline:none;
+}
+
+.my-btn:active{
+  background-color: #3a8ee6;
+}
+
+.down{
+  display:inline-block;
+  border:10px solid transparent;
+  border-top:10px solid #00a1d6;
+}
